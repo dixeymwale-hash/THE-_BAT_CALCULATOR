@@ -38,7 +38,61 @@
       
      function format(){
         document.getElementById("calcdisplay").value = "";
+     } 
+     function dixey(num) {
+    const dixeyshow = document.getElementById("calcdisplay");
+    if (num === '=') {
+        calculate();
+    } else {
+        dixeyshow.value += num;
+    }
      }
+
+     function format(char) 
+     {const dixeyshow = document.getElementById("calcdisplay");
+    if (char === 'C') {
+        dixeyshow.value = "";
+    }
+     }
+
+     function squareRoot() {
+     const dixeyshow = document.getElementById("calcdisplay");
+    if (dixeyshow.value !== "") {
+        dixeyshow.value = Math.sqrt(parseFloat(dixeyshow.value));
+    }
+     }
+
+     function square() {
+     const dixeyshow = document.getElementById("calcdisplay");
+    if (dixeyshow.value !== "") {
+        dixeyshow.value = Math.pow(parseFloat(dixeyshow.value), 2);
+    }
+     }
+
+     function power() {
+     const dixeyshow = document.getElementById("calcdisplay");
+    if (dixeyshow.value !== "") {
+        dixeyshow.value += "**";
+    }
+     }
+
+     function percent() {
+     const dixeyshow = document.getElementById("calcdisplay");
+    if (dixeyshow.value !== "") {
+        dixeyshow.value = parseFloat(dixeyshow.value) / 100;
+    }
+  }
+
+     function calculate() {
+     const dixeyshow = document.getElementById("calcdisplay");
+    try {
+        if (dixeyshow.value !== "") {
+            dixeyshow.value = eval(dixeyshow.value);
+        }
+    } catch (error) {
+        dixeyshow.value = "Error";
+    }
+  }
      </script>
     </body>
 </html>
